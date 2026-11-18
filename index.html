@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love.exe</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #030204;
+  color: white;
+  font-family: monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 12px 15px;
+}
+
+.header {
+  color: #ffb6d5;
+  letter-spacing: 5px;
+  font-size: 13px;
+  opacity: .8;
+}
+
+.heart-area {
+  width: min(95vw, 420px);
+  margin: auto;
+  animation: heartbeat 1.5s infinite ease-in-out;
+  filter: drop-shadow(0 0 9px #ff6fae);
+}
+
+svg {
+  width: 100%;
+  overflow: visible;
+}
+
+.heart-text {
+  fill: #ffb6d5;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  animation: glow 1.5s infinite alternate;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(.94); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes glow {
+  from { opacity: .65; }
+  to {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px #ff70b5);
+  }
+}
+
+.editor {
+  width: 100%;
+  max-width: 500px;
+  background: #090b12;
+  border: 1px solid #222431;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 25px #ff4d9910;
+}
+
+.editor-header {
+  background: #11131c;
+  padding: 12px;
+  display: flex;
+  gap: 18px;
+  color: #aaa;
+  font-size: 12px;
+  border-bottom: 1px solid #252535;
+}
+
+.active {
+  color: #ff82b9;
+}
+
+.code {
+  padding: 13px;
+  font-size: clamp(9px, 2.5vw, 12px);
+  line-height: 1.9;
+  color: #b9c5d8;
+  white-space: pre-wrap;
+  overflow: hidden;
+}
+
+.purple { color: #c792ea; }
+.blue { color: #82aaff; }
+.green { color: #c3e88d; }
+.orange { color: #fcae75; }
+.pink { color: #ff82b9; }
+
+.footer {
+  padding: 12px;
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">LOVE IS WRITTEN IN CODE</div>
+
+  <div class="heart-area">
+    <svg viewBox="0 0 400 370">
+      <defs>
+        <path id="heartPath"
+          d="M200 335
+          C170 300 35 210 35 115
+          C35 20 155 5 200 100
+          C245 5 365 20 365 115
+          C365 210 230 300 200 335 Z"/>
+      </defs>
+
+      <text class="heart-text">
+        <textPath href="#heartPath"
+          startOffset="0%">
+          I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU • I LOVE YOU •
+          <animate attributeName="startOffset"
+            from="0%" to="100%"
+            dur="15s" repeatCount="indefinite"/>
+        </textPath>
+      </text>
+    </svg>
+  </div>
+
+  <div class="editor">
+
+    <div class="editor-header">
+      <span class="active">♥ love.js</span>
+      <span>style.css</span>
+      <span>index.html</span>
+    </div>
+
+    <div class="code">
+<span class="purple">const</span> love = {
+  <span class="blue">feeling</span>: <span class="green">"infinite"</span>,
+  <span class="blue">heartbeat</span>: <span class="orange">true</span>,
+  <span class="blue">favorite</span>: <span class="green">"YOU"</span>
+};
+
+<span class="purple">function</span> <span class="blue">myHeart</span>() {
+  <span class="purple">while</span> (love.heartbeat) {
+    console.log(
+      <span class="pink">"I LOVE YOU ♥"</span>
+    );
+  }
+}
+
+<span class="blue">myHeart</span>();
+    </div>
+
+  </div>
+
+  <div class="footer">
+    COMPILED WITH LOVE ♥
+  </div>
+
+</div>
+
+</body>
+</html>
